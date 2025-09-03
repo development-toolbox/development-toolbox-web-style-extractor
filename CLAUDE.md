@@ -88,7 +88,7 @@ Templates in `templates/` directory define output structure:
 
 - **requests**: HTTP requests for fetching web content
 - **beautifulsoup4**: HTML and CSS parsing
-- **cssutils**: CSS processing and manipulation
+- **tinycss2**: Modern CSS parsing following CSS Syntax Level 3
 - **selenium**: WebDriver for computed styles extraction
 - **webdriver-manager**: Automatic ChromeDriver management
 - **pillow**: Image processing for favicon analysis

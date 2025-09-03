@@ -1,0 +1,19 @@
+# BookStack Configuration Example
+# Add these settings to your .env file
+
+# Application Settings
+APP_NAME="Your Organization"
+APP_URL=https://your-bookstack-domain.com
+
+# Theme Settings  
+APP_THEME=custom
+
+# Custom HTML Head Content (add via web interface)
+# Settings > Customization > Custom HTML Head Content:
+<link rel="stylesheet" href="/themes/custom/custom.css">
+
+# Optional: Custom favicon
+<link rel="icon" type="image/png" href="/themes/custom/assets/favicon.png">
+
+# Custom Footer Content (optional)
+# You can add attribution or custom links here

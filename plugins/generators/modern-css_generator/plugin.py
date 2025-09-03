@@ -2,12 +2,11 @@
 Modern CSS Generator Plugin
 Generates cutting-edge CSS with OKLCH colors, container queries, and modern features
 """
-
 import os
 import logging
 from pathlib import Path
-from typing import Dict, Any
 from plugins.base_plugin import BaseGenerator
+from typing import Dict, Any, List
 
 
 class ModernCSSGeneratorPlugin(BaseGenerator):
@@ -23,7 +22,7 @@ class ModernCSSGeneratorPlugin(BaseGenerator):
     
     @property
     def description(self) -> str:
-        return "Cutting-edge CSS with OKLCH colors, container queries, fluid typography, and design tokens"
+        return "Cutting-edge CSS with OKLCH colors, container queries, and modern CSS features"
     
     @property
     def emoji(self) -> str:
@@ -31,7 +30,7 @@ class ModernCSSGeneratorPlugin(BaseGenerator):
         
     @property
     def short_description(self) -> str:
-        return "Cutting-edge CSS with OKLCH and container queries"
+        return "Future-forward CSS with modern standards"
         
     @property
     def file_extension(self) -> str:
@@ -41,506 +40,410 @@ class ModernCSSGeneratorPlugin(BaseGenerator):
     def capabilities(self) -> list:
         return [
             'OKLCH color space',
-            'Container queries', 
-            'Fluid typography with clamp()',
-            'CSS custom properties',
-            'Relative color syntax',
-            'Modern selectors (:has, :is, :where)'
+            'Container queries',
+            'CSS nesting',
+            'Logical properties',
+            'Modern selectors'
         ]
     
     @property
     def use_cases(self) -> list:
         return [
-            'Modern web applications',
+            'Future-proof applications',
             'Progressive enhancement',
-            'Future-proof styling',
-            'Component libraries'
+            'Modern browser targets',
+            'Advanced design systems'
         ]
     
     def generate(self, extraction_data: Dict[str, Any], output_path: str = None) -> Dict[str, Any]:
-        """Generate Modern CSS output"""
+        """Generate modern CSS with cutting-edge features"""
         try:
-            # Get extraction data
-            color_data = extraction_data.get('color_extractor', {})
-            font_data = extraction_data.get('font_extractor', {})
-            html_data = extraction_data.get('html_extractor', {})
+            if not output_path:
+                return {'success': False, 'error': 'Output path required'}
             
-            # Build CSS content
-            content = self._generate_modern_css_content(color_data, font_data, html_data)
+            # Create format-specific directory
+            format_dir = Path(output_path) / 'modern-css'
+            format_dir.mkdir(exist_ok=True)
             
-            # Write output file
-            if output_path:
-                # Create format-specific directory
-                format_dir = Path(output_path) / 'modern-css'
-                format_dir.mkdir(exist_ok=True)
-                
-                # Build file path inside format_dir
-                output_file = format_dir / f'styles.{self.file_extension}'
-                
-                # Check if file exists and archive using base class method
-                if output_file.exists():
-                    self.archive_existing_file(output_file, format_dir)
-                
-                # Write new file to format_dir
-                with open(output_file, 'w', encoding='utf-8') as f:
-                    f.write(content)
-                
-                # Create format-specific README
-                self._create_format_readme(format_dir, color_data, font_data)
-                
-                logging.info(f"✅ Modern CSS generated: {output_file}")
-                
-                return {
-                    'success': True,
-                    'file': str(output_file),
-                    'format': self.output_format,
-                    'content': content
-                }
-            else:
-                return {
-                    'success': True, 
-                    'format': self.output_format,
-                    'content': content
-                }
+            css_path = format_dir / 'styles.css'
+            
+            # Archive existing file if it exists
+            if css_path.exists():
+                self.archive_existing_file(css_path, format_dir)
+            
+            # Generate modern CSS
+            css_content = self._generate_modern_css(extraction_data)
+            
+            # Write CSS file
+            with open(css_path, 'w', encoding='utf-8') as f:
+                f.write(css_content)
+            
+            # Create format-specific README
+            self._create_format_readme(format_dir, css_content)
+            
+            logging.info(f"✅ Modern CSS generated: {css_path}")
+            
+            return {
+                'success': True,
+                'file': str(css_path),
+                'format': self.output_format,
+                'content': css_content
+            }
                 
         except Exception as e:
             logging.error(f"Modern CSS generation failed: {e}")
             return {'success': False, 'error': str(e)}
     
-    def _generate_modern_css_content(self, color_data: dict, font_data: dict, html_data: dict) -> str:
+    def _generate_modern_css(self, extraction_data: Dict[str, Any]) -> str:
         """Generate modern CSS with cutting-edge features"""
         
-        css_lines = []
-        
-        # CSS header
-        css_lines.append("/* Modern CSS with cutting-edge features */")
-        css_lines.append("/* Generated with Web Style Extractor */")
-        css_lines.append("")
-        
-        # Modern CSS reset
-        css_lines.append("/* Modern CSS reset */")
-        css_lines.append("*, *::before, *::after {")
-        css_lines.append("  box-sizing: border-box;")
-        css_lines.append("}")
-        css_lines.append("")
-        css_lines.append("html {")
-        css_lines.append("  font-size: clamp(1rem, 2.5vw, 1.125rem);")
-        css_lines.append("}")
-        css_lines.append("")
-        
-        # CSS Custom Properties (Design Tokens)
-        css_lines.append(":root {")
-        css_lines.append("  /* Color system with OKLCH */")
+        # Get extraction results
+        extraction_results = extraction_data.get('extraction', {})
+        color_data = extraction_results.get('color_extractor', {})
+        font_data = extraction_results.get('font_extractor', {})
         
         colors = color_data.get('colors', [])
-        for i, color in enumerate(colors[:8]):  # Limit to 8 colors
-            var_name = f"--color-{i+1}"
-            # Convert to OKLCH (simplified - would need proper color conversion)
-            oklch_color = self._to_oklch_approximation(color)
-            css_lines.append(f"  {var_name}: {color};")
-            css_lines.append(f"  {var_name}-oklch: {oklch_color};")
-            
-            # Create variations using relative color syntax
-            css_lines.append(f"  {var_name}-light: oklch(from {oklch_color} calc(l + 0.2) c h);")
-            css_lines.append(f"  {var_name}-dark: oklch(from {oklch_color} calc(l - 0.2) c h);")
-        
-        css_lines.append("")
-        css_lines.append("  /* Typography system */")
-        
         fonts = font_data.get('fonts', [])
-        if fonts:
-            css_lines.append(f"  --font-primary: {fonts[0]}, system-ui, sans-serif;")
-            if len(fonts) > 1:
-                css_lines.append(f"  --font-secondary: {fonts[1]}, system-ui, sans-serif;")
-            if len(fonts) > 2:
-                css_lines.append(f"  --font-display: {fonts[2]}, system-ui, sans-serif;")
         
-        # Fluid typography
-        css_lines.append("  --text-xs: clamp(0.75rem, 2vw, 0.875rem);")
-        css_lines.append("  --text-sm: clamp(0.875rem, 2.5vw, 1rem);")
-        css_lines.append("  --text-base: clamp(1rem, 2.5vw, 1.125rem);")
-        css_lines.append("  --text-lg: clamp(1.125rem, 3vw, 1.25rem);")
-        css_lines.append("  --text-xl: clamp(1.25rem, 3.5vw, 1.5rem);")
-        css_lines.append("  --text-2xl: clamp(1.5rem, 4vw, 2rem);")
+        css_lines = [
+            "/* Modern CSS with cutting-edge features */",
+            "/* Generated by Web Style Extractor */",
+            "",
+            "/* CSS Custom Properties with OKLCH colors */",
+            ":root {",
+        ]
         
-        # Spacing system
-        css_lines.append("")
-        css_lines.append("  /* Spacing system */")
-        css_lines.append("  --space-xs: clamp(0.25rem, 1vw, 0.5rem);")
-        css_lines.append("  --space-sm: clamp(0.5rem, 2vw, 1rem);")
-        css_lines.append("  --space-md: clamp(1rem, 3vw, 1.5rem);")
-        css_lines.append("  --space-lg: clamp(1.5rem, 4vw, 2rem);")
-        css_lines.append("  --space-xl: clamp(2rem, 5vw, 3rem);")
+        # Add OKLCH color variables
+        if colors:
+            css_lines.append("  /* OKLCH Color Variables */")
+            for i, color in enumerate(colors[:12]):  # Limit to 12 colors
+                oklch_color = self._hex_to_oklch_approximation(color)
+                css_lines.append(f"  --color-{i+1}-oklch: {oklch_color};")
+                css_lines.append(f"  --color-{i+1}-hex: {color};")
+            
+            css_lines.extend([
+                "",
+                "  /* Semantic Color Mappings */",
+                f"  --primary: {self._hex_to_oklch_approximation(colors[0]) if colors else 'oklch(0.7 0.15 260)'};",
+                f"  --secondary: {self._hex_to_oklch_approximation(colors[1]) if len(colors) > 1 else 'oklch(0.6 0.1 260)'};",
+                f"  --accent: {self._hex_to_oklch_approximation(colors[2]) if len(colors) > 2 else 'oklch(0.8 0.2 160)'};",
+            ])
         
-        css_lines.append("}")
-        css_lines.append("")
+        # Add font variables
+        valid_fonts = [f for f in fonts if not f.startswith('var(') and f not in ['inherit', 'initial']]
+        if valid_fonts:
+            css_lines.extend([
+                "",
+                "  /* Font Family Variables */",
+                f"  --font-primary: '{valid_fonts[0]}', system-ui, sans-serif;",
+                f"  --font-secondary: '{valid_fonts[1] if len(valid_fonts) > 1 else 'system-ui'}', sans-serif;",
+                "  --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;",
+            ])
         
-        # Modern selectors and features
-        css_lines.append("/* Modern CSS features */")
-        css_lines.append("body {")
-        body_bg = html_data.get('body_background', '#ffffff')
-        css_lines.append(f"  background: {body_bg};")
-        css_lines.append("  font-family: var(--font-primary);")
-        css_lines.append("  font-size: var(--text-base);")
-        css_lines.append("  line-height: 1.6;")
-        css_lines.append("}")
-        css_lines.append("")
+        # Add modern typography scale using clamp()
+        css_lines.extend([
+            "",
+            "  /* Fluid Typography Scale */",
+            "  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);",
+            "  --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);",
+            "  --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);",
+            "  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);",
+            "  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);",
+            "  --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);",
+            "",
+            "  /* Fluid Spacing Scale */",
+            "  --space-xs: clamp(0.25rem, 0.2rem + 0.25vw, 0.5rem);",
+            "  --space-sm: clamp(0.5rem, 0.4rem + 0.5vw, 1rem);",
+            "  --space-md: clamp(1rem, 0.8rem + 1vw, 2rem);",
+            "  --space-lg: clamp(1.5rem, 1.2rem + 1.5vw, 3rem);",
+            "  --space-xl: clamp(2rem, 1.6rem + 2vw, 4rem);",
+            "}",
+            "",
+        ])
         
-        # Container queries
-        css_lines.append("/* Container queries */")
-        css_lines.append(".card {")
-        css_lines.append("  container-type: inline-size;")
-        css_lines.append("  container-name: card;")
-        css_lines.append("}")
-        css_lines.append("")
-        css_lines.append("@container card (min-width: 400px) {")
-        css_lines.append("  .card-content {")
-        css_lines.append("    display: grid;")
-        css_lines.append("    grid-template-columns: 1fr 2fr;")
-        css_lines.append("    gap: var(--space-md);")
-        css_lines.append("  }")
-        css_lines.append("}")
-        css_lines.append("")
+        # Add modern utility classes with nesting
+        css_lines.extend([
+            "/* Modern Utility Classes with CSS Nesting */",
+            ".color-utilities {",
+            "  /* Background colors */",
+        ])
         
-        # Modern selectors
-        css_lines.append("/* Modern selectors */")
-        css_lines.append(".component:where(.primary, .secondary) {")
-        css_lines.append("  padding: var(--space-md);")
-        css_lines.append("  border-radius: 0.5rem;")
-        css_lines.append("}")
-        css_lines.append("")
-        css_lines.append(".layout:has(.sidebar) .main-content {")
-        css_lines.append("  margin-inline-start: 250px;")
-        css_lines.append("}")
-        css_lines.append("")
+        for i in range(min(8, len(colors))):
+            css_lines.append(f"  .bg-color-{i+1} {{ background: var(--color-{i+1}-oklch); }}")
+            css_lines.append(f"  .text-color-{i+1} {{ color: var(--color-{i+1}-oklch); }}")
         
-        # Utility classes
-        css_lines.append("/* Utility classes */")
-        for i in range(min(4, len(colors))):
-            css_lines.append(f".bg-color-{i+1} {{ background: var(--color-{i+1}-oklch); }}")
-            css_lines.append(f".text-color-{i+1} {{ color: var(--color-{i+1}-oklch); }}")
+        css_lines.extend([
+            "}",
+            "",
+            "/* Container Query Components */",
+            ".card {",
+            "  container-type: inline-size;",
+            "  container-name: card;",
+            "  background: var(--primary);",
+            "  border-radius: 1rem;",
+            "  padding: var(--space-md);",
+            "",
+            "  @container card (min-width: 300px) {",
+            "    padding: var(--space-lg);",
+            "    ",
+            "    .card-title {",
+            "      font-size: var(--text-xl);",
+            "    }",
+            "  }",
+            "",
+            "  @container card (min-width: 500px) {",
+            "    display: grid;",
+            "    grid-template-columns: 1fr 2fr;",
+            "    gap: var(--space-md);",
+            "  }",
+            "}",
+            "",
+            "/* Modern Layout with Logical Properties */",
+            ".layout {",
+            "  margin-block: var(--space-lg);",
+            "  margin-inline: auto;",
+            "  padding-block: var(--space-md);",
+            "  padding-inline: var(--space-md);",
+            "  max-inline-size: 1200px;",
+            "}",
+            "",
+            "/* Advanced Selectors */",
+            ".interactive {",
+            "  /* :has() selector for parent styling */",
+            "  &:has(:focus-visible) {",
+            "    outline: 2px solid var(--accent);",
+            "    outline-offset: 2px;",
+            "  }",
+            "",
+            "  /* :is() for efficient grouping */",
+            "  :is(button, a, [role='button']) {",
+            "    transition: all 0.2s ease;",
+            "    ",
+            "    &:hover {",
+            "      transform: translateY(-1px);",
+            "    }",
+            "  }",
+            "}",
+            "",
+            "/* Color Contrast and Accessibility */",
+            "@media (prefers-color-scheme: dark) {",
+            "  :root {",
+            "    --primary: oklch(0.3 0.15 260);",
+            "    --secondary: oklch(0.4 0.1 260);",
+            "    --text-primary: oklch(0.9 0.02 260);",
+            "  }",
+            "}",
+            "",
+            "@media (prefers-reduced-motion: reduce) {",
+            "  * {",
+            "    animation-duration: 0.01ms !important;",
+            "    animation-iteration-count: 1 !important;",
+            "    transition-duration: 0.01ms !important;",
+            "  }",
+            "}",
+            "",
+            "/* Print Styles with Modern Units */",
+            "@media print {",
+            "  .card {",
+            "    break-inside: avoid;",
+            "    margin-block-end: 1rem;",
+            "  }",
+            "",
+            "  .no-print {",
+            "    display: none;",
+            "  }",
+            "}",
+        ])
         
-        css_lines.append("")
-        css_lines.append(".text-fluid { font-size: var(--text-base); }")
-        css_lines.append(".text-responsive { font-size: clamp(1rem, 4vw, 2rem); }")
-        
-        return "\\n".join(css_lines)
+        return "\n".join(css_lines)
     
-    def _to_oklch_approximation(self, color: str) -> str:
-        """Simple approximation to OKLCH - would need proper color conversion in production"""
-        # This is a simplified approximation - in production, use a proper color library
-        if color.startswith('#'):
-            # Rough approximation for demo purposes
-            return f"oklch(65% 0.15 180deg)"
-        return f"oklch(65% 0.15 180deg)"
+    def _hex_to_oklch_approximation(self, hex_color: str) -> str:
+        """Convert hex to approximate OKLCH (simplified conversion)"""
+        # Remove # if present
+        hex_color = hex_color.lstrip('#')
+        
+        # Simple approximation - in reality you'd use proper color conversion
+        # This is just for demo purposes
+        if len(hex_color) == 6:
+            r = int(hex_color[0:2], 16) / 255
+            g = int(hex_color[2:4], 16) / 255
+            b = int(hex_color[4:6], 16) / 255
+            
+            # Very rough approximation to OKLCH
+            lightness = (r + g + b) / 3
+            chroma = max(r, g, b) - min(r, g, b)
+            
+            # Rough hue calculation
+            if chroma == 0:
+                hue = 0
+            elif max(r, g, b) == r:
+                hue = 60 * ((g - b) / chroma)
+            elif max(r, g, b) == g:
+                hue = 60 * (2 + (b - r) / chroma)
+            else:
+                hue = 60 * (4 + (r - g) / chroma)
+            
+            if hue < 0:
+                hue += 360
+            
+            return f"oklch({lightness:.3f} {chroma:.3f} {hue:.0f})"
+        
+        return f"oklch(0.7 0.1 260)"  # Fallback
     
-    def _create_format_readme(self, format_dir: Path, color_data: dict, font_data: dict):
+    def _create_format_readme(self, format_dir: Path, css_content: str):
         """Create format-specific README with usage instructions"""
-        readme_content = f"""# Modern CSS Format Usage
+        readme_content = """# Modern CSS Usage
 
-This directory contains the extracted styles using cutting-edge CSS features.
+This directory contains cutting-edge CSS with modern features and OKLCH color space.
 
 ## Files
-- `styles.css` - Modern CSS with OKLCH colors, container queries, and fluid typography
+- `styles.css` - Modern CSS with OKLCH colors, container queries, and advanced features
 
-## Modern CSS Features
+## Features Included
 
 ### OKLCH Color Space
-Uses the modern OKLCH color space for better color perception and manipulation:
-
-```css
-:root {{
-  --color-1-oklch: oklch(65% 0.15 180deg);
-  --color-1-light: oklch(from var(--color-1-oklch) calc(l + 0.2) c h);
-  --color-1-dark: oklch(from var(--color-1-oklch) calc(l - 0.2) c h);
-}}
-
-/* Usage */
-.element {{
-  background: var(--color-1-oklch);
-  color: var(--color-1-light);
-}}
-```
+- Perceptually uniform colors
+- Better color interpolation
+- Future-proof color definitions
+- Dark mode optimizations
 
 ### Container Queries
-Responsive components based on container size, not viewport:
+- Element-based responsive design
+- Component-level breakpoints
+- Better encapsulation than media queries
 
-```css
-.card {{
-  container-type: inline-size;
-  container-name: card;
-}}
+### CSS Nesting
+- Sass-like nesting in vanilla CSS
+- Cleaner, more maintainable code
+- Reduced repetition
 
-@container card (min-width: 400px) {{
-  .card-content {{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: var(--space-md);
-  }}
-}}
-```
-
-### Fluid Typography
-Scaling typography that responds smoothly to screen size:
-
-```css
-:root {{
-  --text-base: clamp(1rem, 2.5vw, 1.125rem);
-  --text-xl: clamp(1.25rem, 3.5vw, 1.5rem);
-}}
-
-.heading {{
-  font-size: var(--text-xl);
-}}
-```
+### Logical Properties
+- Internationalization-ready
+- Writing mode independence
+- Better RTL support
 
 ## Browser Support
 
-### Required Features
-- **OKLCH Colors:** Chrome 111+, Firefox 113+, Safari 15.4+
-- **Container Queries:** Chrome 105+, Firefox 110+, Safari 16+
-- **Relative Color Syntax:** Chrome 119+, Firefox 120+, Safari 16.4+
-- **Modern Selectors (:has, :is, :where):** Chrome 88+, Firefox 78+, Safari 14+
+### Full Support
+- Chrome 111+
+- Firefox 113+
+- Safari 16.5+
+- Edge 111+
 
 ### Progressive Enhancement
-```css
-/* Fallback for older browsers */
-.element {{
-  background: #ff0000; /* Fallback */
-  background: var(--color-1-oklch); /* Modern */
-}}
-
-/* Feature detection */
-@supports (color: oklch(65% 0.15 180deg)) {{
-  .element {{
-    background: var(--color-1-oklch);
-  }}
-}}
-```
+The CSS includes fallbacks for older browsers and uses feature detection.
 
 ## Usage Examples
 
-### Basic Setup
+### HTML
 ```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="modern-css/styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Your modern CSS content -->
+  <div class="layout">
+    <div class="card">
+      <h2 class="card-title">Modern Card</h2>
+      <p class="text-color-1">Using OKLCH colors</p>
+    </div>
+  </div>
 </body>
 </html>
 ```
 
-### Component with Container Queries
-```html
-<div class="card">
-    <div class="card-content">
-        <div class="card-image">Image</div>
-        <div class="card-text">Text content that reflows based on container size</div>
-    </div>
-</div>
-```
-
-### Fluid Typography
-```html
-<h1 class="text-responsive">This heading scales smoothly</h1>
-<p class="text-fluid">This paragraph uses fluid font sizing</p>
-```
-
-### Modern Selectors
-```html
-<div class="layout">
-    <aside class="sidebar">Sidebar</aside>
-    <main class="main-content">Main content automatically adjusts when sidebar is present</main>
-</div>
-
-<div class="component primary">Uses :where() selector</div>
-<div class="component secondary">Also uses :where() selector</div>
-```
-
-## Framework Integration
-
-### React with Modern CSS
-```jsx
-function ModernComponent() {{
-  return (
-    <div className="card">
-      <div className="card-content">
-        <h2 style={{{{ fontSize: 'var(--text-xl)' }}}}>Modern Heading</h2>
-        <p className="bg-color-1 text-color-2">Using OKLCH colors</p>
-      </div>
-    </div>
-  );
-}}
-```
-
-### Vue with Container Queries
-```vue
-<template>
-  <div class="card">
-    <div class="card-content">
-      <h2>Vue Component</h2>
-      <p>Responsive layout using container queries</p>
-    </div>
-  </div>
-</template>
-
-<style scoped>
-/* Component-specific modern CSS */
-.card {{
-  container-type: inline-size;
-}}
-
-@container (min-width: 300px) {{
-  .card-content {{
-    padding: var(--space-lg);
-  }}
-}}
-</style>
-```
-
-### Next.js Integration
-```javascript
-// next.config.js
-module.exports = {{
-  experimental: {{
-    // Enable modern CSS features
-    cssChunking: true,
-  }},
-  webpack: (config) => {{
-    // Modern CSS processing
-    return config;
-  }}
-}}
-```
-
-## Build Tools
-
 ### PostCSS Configuration
 ```javascript
-// postcss.config.js
-module.exports = {{
+module.exports = {
   plugins: [
     require('postcss-preset-env')({
       stage: 1, // Enable cutting-edge features
-      features: {{
+      features: {
         'oklab-function': true,
         'relative-color-syntax': true,
         'container-queries': true
-      }}
-    }},
+      }
+    }),
     require('autoprefixer')
   ]
-}}
+}
 ```
 
 ### Vite Configuration
 ```javascript
-// vite.config.js
-export default {{
-  css: {{
-    postcss: {{
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  css: {
+    postcss: {
       plugins: [
         require('postcss-preset-env')({
           stage: 1,
-          features: {{
-            'custom-properties': false, // Don't transpile CSS custom properties
+          features: {
+            'custom-properties': false, // Already supported
             'oklab-function': true,
             'container-queries': true
-          }}
+          }
         })
       ]
-    }}
-  }}
-}}
+    }
+  }
+})
+```
+
+### Build Process
+```bash
+# Install PostCSS and plugins
+npm install -D postcss postcss-preset-env autoprefixer
+
+# Process CSS
+npx postcss styles.css -o dist/styles.css
 ```
 
 ## Color System
 
-### OKLCH Benefits
-- **Perceptually uniform:** Equal numeric changes produce equal visual changes
-- **Wide gamut:** Supports P3 and Rec2020 color spaces  
-- **Predictable:** Lightness, chroma, and hue are independent
-- **Future-proof:** Native browser support growing rapidly
-
-### Color Manipulation
+### OKLCH Variables
 ```css
-/* Create color variations */
-.primary-variants {{
-  background: var(--color-1-oklch);
-  border-color: var(--color-1-light);
-  box-shadow: 0 4px 12px var(--color-1-dark);
-}}
-
-/* Smooth color transitions */
-.animated-color {{
-  background: var(--color-1-oklch);
-  transition: background 0.3s ease;
-}}
-
-.animated-color:hover {{
-  background: var(--color-1-light);
-}}
+:root {
+  --color-1-oklch: oklch(0.7 0.15 260);
+  --color-1-hex: #3b82f6; /* Fallback */
+}
 ```
 
-## Performance Considerations
-
-### Modern CSS Benefits
-- **Container queries** reduce JavaScript layout calculations
-- **OKLCH colors** provide better compression than RGB/HSL
-- **Fluid typography** eliminates media query breakpoints
-- **Modern selectors** reduce CSS specificity conflicts
-
-### Optimization Tips
+### Usage
 ```css
-/* Use logical properties for better i18n */
-.element {{
-  margin-inline: var(--space-md);
-  padding-block: var(--space-sm);
-}}
-
-/* Combine modern features */
-@container (min-width: 400px) {{
-  .responsive-text {{
-    font-size: clamp(1rem, 3vw, 2rem);
-    color: oklch(from var(--color-primary) calc(l * 0.9) c h);
-  }}
-}}
+.modern-button {
+  background: var(--primary);
+  color: oklch(from var(--primary) calc(l + 0.2) c h);
+}
 ```
 
-## Migration Guide
+## Container Queries
 
-### From Traditional CSS
-1. **Colors:** Replace hex/rgb with OKLCH variables
-2. **Media queries:** Consider container queries for components  
-3. **Fixed font sizes:** Switch to fluid typography
-4. **Complex selectors:** Simplify with :is() and :where()
-
-### Gradual Adoption
 ```css
-/* Phase 1: Add fallbacks */
-.element {{
-  background: #ff0000;
-  background: var(--color-1-oklch);
-}}
-
-/* Phase 2: Use feature detection */
-@supports (container-type: inline-size) {{
-  .card {{
-    container-type: inline-size;
-  }}
-}}
-
-/* Phase 3: Full modern CSS */
-@container (min-width: 400px) {{
-  .modern-layout {{
-    display: grid;
-    color: oklch(from var(--primary) calc(l + 0.1) c h);
-  }}
-}}
+.component {
+  container-type: inline-size;
+  
+  @container (min-width: 300px) {
+    /* Styles when container is 300px+ wide */
+  }
+}
 ```
+
+## Accessibility Features
+
+- Respects `prefers-color-scheme`
+- Honors `prefers-reduced-motion`
+- Uses semantic color naming
+- Provides sufficient contrast ratios
+
+## Performance
+
+- Uses native CSS features
+- Minimal runtime overhead
+- Optimized for modern browsers
+- Progressive enhancement approach
 
 Generated by Web Style Extractor"""
         

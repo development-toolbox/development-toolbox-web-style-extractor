@@ -1,0 +1,23 @@
+Web Style Extractor v1.2.0 - Extraction Report
+============================================================
+
+URL: https://github.com
+Extracted at: Unknown
+Output directory: projects\github.com
+
+Extractors used:
+  • html_extractor
+  • color_extractor
+  • font_extractor
+  • css_extractor
+  • branding_extractor
+
+Generators used:
+  • json_generator
+  • css_generator
+  • mediawiki_generator
+  • bookstack_generator
+
+Total files generated: 0
+Colors extracted: 740
+Fonts extracted: 0

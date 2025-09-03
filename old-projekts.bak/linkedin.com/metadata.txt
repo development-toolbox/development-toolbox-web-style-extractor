@@ -1,0 +1,26 @@
+Web Style Extractor v1.2.0 - Extraction Report
+============================================================
+
+URL: https://linkedin.com
+Extracted at: Unknown
+Output directory: projects\linkedin.com
+
+Extractors used:
+  • html_extractor
+  • color_extractor
+  • font_extractor
+  • css_extractor
+  • branding_extractor
+
+Generators used:
+  • bookstack_generator
+  • css_generator
+  • design-tokens_generator
+  • html_generator
+  • json_generator
+  • mediawiki_generator
+  • modern-css_generator
+
+Total files generated: 6
+Colors extracted: 139
+Fonts extracted: 10

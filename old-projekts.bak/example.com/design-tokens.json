@@ -1,0 +1,217 @@
+{
+  "designSystem": {
+    "colors": {
+      "semantic": {
+        "primary": {
+          "value": "#fdfdff",
+          "type": "color",
+          "description": "Primary brand color"
+        },
+        "secondary": {
+          "value": "#f0f0f2",
+          "type": "color",
+          "description": "Secondary brand color"
+        }
+      },
+      "brand": {
+        "color-01": {
+          "value": "#fdfdff",
+          "type": "color",
+          "description": "Brand color 1"
+        },
+        "color-02": {
+          "value": "#f0f0f2",
+          "type": "color",
+          "description": "Brand color 2"
+        },
+        "color-03": {
+          "value": "#38488f",
+          "type": "color",
+          "description": "Brand color 3"
+        }
+      },
+      "neutral": {}
+    },
+    "typography": {
+      "fontFamilies": {
+        "primary": {
+          "value": "-apple-system",
+          "type": "fontFamily",
+          "description": "Primary font family"
+        },
+        "secondary": {
+          "value": "BlinkMacSystemFont",
+          "type": "fontFamily",
+          "description": "Secondary font family"
+        },
+        "display": {
+          "value": "Helvetica",
+          "type": "fontFamily",
+          "description": "Display/heading font family"
+        }
+      },
+      "fontSizes": {
+        "xs": {
+          "value": "clamp(0.75rem, 2vw, 0.875rem)",
+          "static": "0.75rem",
+          "type": "fontSize.fluid",
+          "description": "Font size xs"
+        },
+        "sm": {
+          "value": "clamp(0.875rem, 2.5vw, 1rem)",
+          "static": "0.875rem",
+          "type": "fontSize.fluid",
+          "description": "Font size sm"
+        },
+        "base": {
+          "value": "clamp(1rem, 2.5vw, 1.125rem)",
+          "static": "1rem",
+          "type": "fontSize.fluid",
+          "description": "Font size base"
+        },
+        "lg": {
+          "value": "clamp(1.125rem, 3vw, 1.25rem)",
+          "static": "1.125rem",
+          "type": "fontSize.fluid",
+          "description": "Font size lg"
+        },
+        "xl": {
+          "value": "clamp(1.25rem, 3.5vw, 1.5rem)",
+          "static": "1.25rem",
+          "type": "fontSize.fluid",
+          "description": "Font size xl"
+        },
+        "2xl": {
+          "value": "clamp(1.5rem, 4vw, 2rem)",
+          "static": "1.5rem",
+          "type": "fontSize.fluid",
+          "description": "Font size 2xl"
+        },
+        "3xl": {
+          "value": "clamp(1.875rem, 5vw, 2.5rem)",
+          "static": "1.875rem",
+          "type": "fontSize.fluid",
+          "description": "Font size 3xl"
+        }
+      },
+      "fontWeights": {
+        "light": {
+          "value": "300",
+          "type": "fontWeight",
+          "description": "Light font weight"
+        },
+        "regular": {
+          "value": "400",
+          "type": "fontWeight",
+          "description": "Regular font weight"
+        },
+        "medium": {
+          "value": "500",
+          "type": "fontWeight",
+          "description": "Medium font weight"
+        },
+        "semibold": {
+          "value": "600",
+          "type": "fontWeight",
+          "description": "Semibold font weight"
+        },
+        "bold": {
+          "value": "700",
+          "type": "fontWeight",
+          "description": "Bold font weight"
+        }
+      },
+      "lineHeights": {
+        "tight": {
+          "value": "1.25",
+          "type": "lineHeight",
+          "description": "Tight line height"
+        },
+        "normal": {
+          "value": "1.5",
+          "type": "lineHeight",
+          "description": "Normal line height"
+        },
+        "relaxed": {
+          "value": "1.75",
+          "type": "lineHeight",
+          "description": "Relaxed line height"
+        }
+      }
+    },
+    "spacing": {
+      "scale": {
+        "xs": {
+          "value": "clamp(0.25rem, 1vw, 0.5rem)",
+          "static": "0.25rem",
+          "type": "spacing.fluid",
+          "description": "Spacing size xs"
+        },
+        "sm": {
+          "value": "clamp(0.5rem, 2vw, 1rem)",
+          "static": "0.5rem",
+          "type": "spacing.fluid",
+          "description": "Spacing size sm"
+        },
+        "md": {
+          "value": "clamp(1rem, 3vw, 1.5rem)",
+          "static": "1rem",
+          "type": "spacing.fluid",
+          "description": "Spacing size md"
+        },
+        "lg": {
+          "value": "clamp(1.5rem, 4vw, 2rem)",
+          "static": "1.5rem",
+          "type": "spacing.fluid",
+          "description": "Spacing size lg"
+        },
+        "xl": {
+          "value": "clamp(2rem, 5vw, 3rem)",
+          "static": "2rem",
+          "type": "spacing.fluid",
+          "description": "Spacing size xl"
+        },
+        "2xl": {
+          "value": "clamp(3rem, 6vw, 4rem)",
+          "static": "3rem",
+          "type": "spacing.fluid",
+          "description": "Spacing size 2xl"
+        }
+      }
+    },
+    "radius": {
+      "scale": {
+        "none": {
+          "value": "0",
+          "type": "borderRadius",
+          "description": "No border radius"
+        },
+        "sm": {
+          "value": "0.125rem",
+          "type": "borderRadius",
+          "description": "Small border radius"
+        },
+        "md": {
+          "value": "0.375rem",
+          "type": "borderRadius",
+          "description": "Medium border radius"
+        },
+        "lg": {
+          "value": "0.5rem",
+          "type": "borderRadius",
+          "description": "Large border radius"
+        },
+        "xl": {
+          "value": "0.75rem",
+          "type": "borderRadius",
+          "description": "Extra large border radius"
+        },
+        "full": {
+          "value": "9999px",
+          "type": "borderRadius",
+          "description": "Full border radius"
+        }
+      }
+    }
+  }
+}

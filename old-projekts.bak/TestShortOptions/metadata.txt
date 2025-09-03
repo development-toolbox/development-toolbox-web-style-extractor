@@ -1,0 +1,20 @@
+Web Style Extractor v1.2.0 - Extraction Report
+============================================================
+
+URL: https://example.com
+Extracted at: Unknown
+Output directory: projects\TestShortOptions
+
+Extractors used:
+  • html_extractor
+  • color_extractor
+  • font_extractor
+  • css_extractor
+  • branding_extractor
+
+Generators used:
+  • tailwind_generator
+
+Total files generated: 1
+Colors extracted: 4
+Fonts extracted: 9

@@ -1,0 +1,58 @@
+== Style Guide for https://github.com ==
+
+'''Body Background:''' rgb(13, 17, 23)
+'''Body Font:''' -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"
+'''Heading Color:''' rgb(31, 35, 40)
+'''Link Color:''' rgb(255, 255, 255)
+
+=== Color Palette ===
+{| class="wikitable"
+|-
+! Color !! Value
+|-
+| style='background-color: #ffffff' | {{#tag:colorbox|#ffffff}}
+| <code>#ffffff</code>
+|-
+| style='background-color: #bbbbbb' | {{#tag:colorbox|#bbbbbb}}
+| <code>#bbbbbb</code>
+|-
+| style='background-color: #1f883d' | {{#tag:colorbox|#1f883d}}
+| <code>#1f883d</code>
+|-
+| style='background-color: #0757ba' | {{#tag:colorbox|#0757ba}}
+| <code>#0757ba</code>
+|-
+| style='background-color: #197935' | {{#tag:colorbox|#197935}}
+| <code>#197935</code>
+|-
+| style='background-color: #95d8a6' | {{#tag:colorbox|#95d8a6}}
+| <code>#95d8a6</code>
+|-
+| style='background-color: #1c8139' | {{#tag:colorbox|#1c8139}}
+| <code>#1c8139</code>
+|-
+| style='background-color: #c21c2c' | {{#tag:colorbox|#c21c2c}}
+| <code>#c21c2c</code>
+|-
+| style='background-color: #1b7c83' | {{#tag:colorbox|#1b7c83}}
+| <code>#1b7c83</code>
+|-
+| style='background-color: #3192aa' | {{#tag:colorbox|#3192aa}}
+| <code>#3192aa</code>
+|}
+
+=== Fonts ===
+{| class="wikitable"
+|-
+! Font
+|-
+| <code>monospace</code>
+|-
+| <code>inherit</code>
+|-
+| <code>SFMono-Regular</code>
+|-
+| <code>Consolas</code>
+|-
+| <code>Liberation Mono</code>
+|}

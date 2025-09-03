@@ -1,0 +1,53 @@
+# Plugin configuration for Web Style Extractor
+# This file controls which plugins are loaded and enabled
+
+# Extractor plugins - these extract data from web pages
+enabled_extractors:
+  - html_extractor      # HTML structure and DOM analysis
+  - color_extractor     # Color extraction from CSS and computed styles
+  - font_extractor      # Font and typography extraction
+  - css_extractor       # CSS rules and properties analysis
+  - branding_extractor  # Logo and branding assets (when available)
+
+# Generator plugins - these produce output files
+enabled_generators:
+  - json_generator      # Structured JSON output
+  - css_generator       # CSS variables and utility classes
+  - mediawiki_generator # MediaWiki table format
+  - tailwind_generator  # Tailwind CSS configuration
+  - bookstack_generator # BookStack theme CSS
+  - github_pages_generator  # GitHub Pages website
+
+# Plugin-specific settings
+plugin_settings:
+  color_extractor:
+    max_colors: 20
+    include_image_colors: true
+    filter_boring_colors: true
+  
+  font_extractor:
+    max_fonts: 10
+    include_google_fonts: true
+    analyze_typography_scale: true
+  
+  css_extractor:
+    max_css_size: 1000000  # 1MB limit
+    include_external_stylesheets: true
+    max_stylesheets: 10
+  
+  json_generator:
+    pretty_print: true
+    include_usage_examples: true
+  
+  css_generator:
+    include_utilities: true
+    include_components: true
+  
+  bookstack_generator:
+    download_assets: true
+    optimize_images: true
+    max_image_size: 200  # KB
+  
+  github_pages_generator:
+    include_examples: true
+    generate_demo: true

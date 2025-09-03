@@ -1,0 +1,87 @@
+== Style Guide for Unknown URL ==
+
+=== Basic Information ===
+'''Body Background:''' Not detected
+'''Body Font:''' Not detected
+
+=== Color Palette ===
+{| class="wikitable"
+|-
+! Color !! Value !! Usage
+|-
+| style='background-color: #ffff99' | 
+| <code>#ffff99</code>
+| Color 1
+|-
+| style='background-color: #fff5f2' | 
+| <code>#fff5f2</code>
+| Color 2
+|-
+| style='background-color: #fff4fe' | 
+| <code>#fff4fe</code>
+| Color 3
+|-
+| style='background-color: #ffefea' | 
+| <code>#ffefea</code>
+| Color 4
+|-
+| style='background-color: #ffdfd6' | 
+| <code>#ffdfd6</code>
+| Color 5
+|-
+| style='background-color: #fdf6ec' | 
+| <code>#fdf6ec</code>
+| Color 6
+|-
+| style='background-color: #fdf4dc' | 
+| <code>#fdf4dc</code>
+| Color 7
+|-
+| style='background-color: #fdf0de' | 
+| <code>#fdf0de</code>
+| Color 8
+|-
+| style='background-color: #fde2bc' | 
+| <code>#fde2bc</code>
+| Color 9
+|-
+| style='background-color: #fdc2b1' | 
+| <code>#fdc2b1</code>
+| Color 10
+|}
+
+=== Typography ===
+{| class="wikitable"
+|-
+! Font Family !! Type
+|-
+| var(--artdeco-reset-typography-font-family-sans)
+| Sans-serif
+|-
+| inherit
+| Sans-serif
+|-
+| system-ui
+| Sans-serif
+|-
+| -apple-system
+| Sans-serif
+|-
+| arial
+| Sans-serif
+|-
+| Roboto-Regular
+| Sans-serif
+|-
+| sans-serif
+| Serif
+|-
+| Google Sans
+| Sans-serif
+|}
+
+=== How to Use ===
+# Copy the color values from the table above
+# Use the font families in your CSS or theme settings
+# Apply the body background color to match the original site
+# Test the color combinations for accessibility

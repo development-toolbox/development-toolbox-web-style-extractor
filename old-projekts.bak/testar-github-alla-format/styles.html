@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Guide - Unknown URL</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #f8fafc;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+        }
+        
+        .header p {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
+        
+        .section {
+            background: white;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 0.5rem;
+        }
+        
+        /* Color palette styles */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .color-swatch {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        
+        .color-swatch:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .color-preview {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-weight: 500;
+        }
+        
+        .color-info {
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .color-value {
+            font-family: 'SF Mono', Monaco, monospace;
+            background: #f1f5f9;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            color: #475569;
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+        
+        /* Font styles */
+        .font-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .font-sample {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s;
+        }
+        
+        .font-sample:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .font-name {
+            font-family: 'SF Mono', Monaco, monospace;
+            background: #f1f5f9;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            color: #475569;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .font-preview {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+        
+        .font-sizes {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .font-size {
+            color: #64748b;
+        }
+        
+        /* Basic info styles */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .info-item {
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background: #f8fafc;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-value {
+            font-family: 'SF Mono', Monaco, monospace;
+            color: #1e293b;
+            word-break: break-all;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .color-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                max-width: none;
+            }
+            
+            .section {
+                box-shadow: none;
+                border: 1px solid #e2e8f0;
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🎨 Style Guide</h1>
+        <p>Extracted from <strong>Unknown URL</strong></p>
+    </div>
+    
+    <div class="section">
+        <h2>📋 Basic Information</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="info-label">URL</div>
+                <div class="info-value">Unknown URL</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Body Background</div>
+                <div class="info-value">#ffffff</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Body Font</div>
+                <div class="info-value">system-ui, sans-serif</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>🎨 Color Palette</h2>
+        <div class="color-grid">
+
+            <div class="color-swatch">
+                <div class="color-preview" style="background-color: #ffffffcc; color: #000000;">
+                    Color 1
+                </div>
+                <div class="color-info">
+                    <div class="color-value">#ffffffcc</div>
+                </div>
+            </div>
+
+            <div class="color-swatch">
+                <div class="color-preview" style="background-color: #ffffffb3; color: #000000;">
+                    Color 2
+                </div>
+                <div class="color-info">
+                    <div class="color-value">#ffffffb3</div>
+                </div>
+            </div>
+
+            <div class="color-swatch">
+                <div class="color-preview" style="background-color: #ffffff66; color: #000000;">
+                    Color 3
+                </div>
+                <div class="color-info">
+                    <div class="color-value">#ffffff66</div>
+                </div>
+            </div>
+
+            <div class="color-swatch">
+                <div class="color-preview" style="background-color: #ffffff33; color: #000000;">
+                    Color 4
+                </div>
+                <div class="color-info">
+                    <div class="color-value">#ffffff33</div>
+                </div>
+            </div>
+
+            <div class="color-swatch">
+                <div class="color-preview" style="background-color: #ffffff26; color: #000000;">
+                    Color 5
+                </div>
+                <div class="color-info">
+                    <div class="color-value">#ffffff26</div>
+                </div>
+            </div>
+
+            <div class="color-swatch">
+                <div class="color-preview" style="background-color: #ffffff1a; color: #000000;">
+                    Color 6
+                </div>
+                <div class="color-info">
+                    <div class="color-value">#ffffff1a</div>
+                </div>
+            </div>
+
+            <div class="color-swatch">
+                <div class="color-preview" style="background-color: #ffffff00; color: #000000;">
+                    Color 7
+                </div>
+                <div class="color-info">
+                    <div class="color-value">#ffffff00</div>
+                </div>
+            </div>
+
+            <div class="color-swatch">
+                <div class="color-preview" style="background-color: #fff8c5; color: #000000;">
+                    Color 8
+                </div>
+                <div class="color-info">
+                    <div class="color-value">#fff8c5</div>
+                </div>
+            </div>
+
+            <div class="color-swatch">
+                <div class="color-preview" style="background-color: #fff2d5; color: #000000;">
+                    Color 9
+                </div>
+                <div class="color-info">
+                    <div class="color-value">#fff2d5</div>
+                </div>
+            </div>
+
+            <div class="color-swatch">
+                <div class="color-preview" style="background-color: #fff1e5; color: #000000;">
+                    Color 10
+                </div>
+                <div class="color-info">
+                    <div class="color-value">#fff1e5</div>
+                </div>
+            </div>
+
+            <div class="color-swatch">
+                <div class="color-preview" style="background-color: #fff0ee; color: #000000;">
+                    Color 11
+                </div>
+                <div class="color-info">
+                    <div class="color-value">#fff0ee</div>
+                </div>
+            </div>
+
+            <div class="color-swatch">
+                <div class="color-preview" style="background-color: #ffeff7; color: #000000;">
+                    Color 12
+                </div>
+                <div class="color-info">
+                    <div class="color-value">#ffeff7</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>🔤 Typography</h2>
+        <div class="font-grid">
+
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>📖 Usage Instructions</h2>
+        <ol style="line-height: 1.8; margin-left: 1.5rem;">
+            <li>Click on color swatches to copy hex values</li>
+            <li>Use the font families shown in your CSS</li>
+            <li>Test color combinations for accessibility compliance</li>
+            <li>Consider the original context when applying colors</li>
+        </ol>
+    </div>
+    
+    <script>
+        // Add click-to-copy functionality
+        document.querySelectorAll('.color-swatch').forEach(swatch => {
+            swatch.addEventListener('click', () => {
+                const colorValue = swatch.querySelector('.color-value').textContent;
+                navigator.clipboard.writeText(colorValue).then(() => {
+                    const original = swatch.querySelector('.color-preview').textContent;
+                    swatch.querySelector('.color-preview').textContent = 'Copied!';
+                    setTimeout(() => {
+                        swatch.querySelector('.color-preview').textContent = original;
+                    }, 1000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

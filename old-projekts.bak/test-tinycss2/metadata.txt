@@ -1,0 +1,20 @@
+Web Style Extractor v1.2.0 - Extraction Report
+============================================================
+
+URL: https://github.com
+Extracted at: Unknown
+Output directory: projects\test-tinycss2
+
+Extractors used:
+  • html_extractor
+  • color_extractor
+  • font_extractor
+  • css_extractor
+  • branding_extractor
+
+Generators used:
+  • json_generator
+
+Total files generated: 1
+Colors extracted: 740
+Fonts extracted: 0

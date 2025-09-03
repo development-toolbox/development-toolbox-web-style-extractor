@@ -1,0 +1,36 @@
+{
+  "url": "https://github.com",
+  "extraction_date": "2025-09-03T11:00:06.882142Z",
+  "styles": {
+    "body_background": "rgb(13, 17, 23)",
+    "body_font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Noto Sans\", Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+    "heading_color": "rgb(31, 35, 40)",
+    "link_color": "rgb(255, 255, 255)"
+  },
+  "colors": [
+    "#ffffff",
+    "#bbbbbb",
+    "#1f883d",
+    "#0757ba",
+    "#197935",
+    "#95d8a6",
+    "#1c8139",
+    "#c21c2c",
+    "#1b7c83",
+    "#3192aa"
+  ],
+  "fonts": [
+    "monospace",
+    "inherit",
+    "SFMono-Regular",
+    "Consolas",
+    "Liberation Mono"
+  ],
+  "metadata": {
+    "extractor_version": "1.0",
+    "total_colors_found": 10,
+    "total_fonts_found": 5,
+    "extraction_method": "css_analysis_and_computed_styles",
+    "browser_used": "Chrome (headless)"
+  }
+}

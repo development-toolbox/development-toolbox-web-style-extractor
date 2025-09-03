@@ -1,0 +1,152 @@
+/* 
+   CSS Variables and Utilities
+   Generated from: https://www.saab.com/
+   Date: 2025-09-02 21:59:37
+   Web Style Extractor v1.0
+*/
+
+:root {
+    /* === Color Palette === */
+    --color-1: #ffff00;  /* Color 1 */
+    --color-2: #000000;  /* Color 2 */
+    --color-3: #444444;  /* Color 3 */
+    --color-4: #999999;  /* Color 4 */
+    --color-5: #e6e6e6;  /* Color 5 */
+    --color-6: #0078e7;  /* Color 6 */
+    --color-7: #ffffff;  /* Color 7 */
+    --color-8: #cccccc;  /* Color 8 */
+    --color-9: #dddddd;  /* Color 9 */
+    --color-10: #129fea;  /* Color 10 */
+    
+    /* === Named Colors === */
+    --color-primary: #ffff00;
+    --color-secondary: #000000;
+    --color-accent: #444444;
+    
+    /* === Typography === */
+    --font-primary: monospace;
+    --font-secondary: FreeSans;
+    --font-mono: monospace;
+    --font-stack: AktivGroteskRegular, Arial, sans-serif;
+    
+    /* === Extracted Styles === */
+    --body-background: rgb(243, 243, 242);
+    --heading-color: rgb(255, 255, 255);
+    --link-color: rgb(255, 255, 255);
+    --text-color: rgb(255, 255, 255);
+}
+
+/* === Color Utility Classes === */
+.bg-color-1 { background-color: var(--color-1); }
+.text-color-1 { color: var(--color-1); }
+.border-color-1 { border-color: var(--color-1); }
+.bg-color-2 { background-color: var(--color-2); }
+.text-color-2 { color: var(--color-2); }
+.border-color-2 { border-color: var(--color-2); }
+.bg-color-3 { background-color: var(--color-3); }
+.text-color-3 { color: var(--color-3); }
+.border-color-3 { border-color: var(--color-3); }
+.bg-color-4 { background-color: var(--color-4); }
+.text-color-4 { color: var(--color-4); }
+.border-color-4 { border-color: var(--color-4); }
+.bg-color-5 { background-color: var(--color-5); }
+.text-color-5 { color: var(--color-5); }
+.border-color-5 { border-color: var(--color-5); }
+.bg-color-6 { background-color: var(--color-6); }
+.text-color-6 { color: var(--color-6); }
+.border-color-6 { border-color: var(--color-6); }
+.bg-color-7 { background-color: var(--color-7); }
+.text-color-7 { color: var(--color-7); }
+.border-color-7 { border-color: var(--color-7); }
+.bg-color-8 { background-color: var(--color-8); }
+.text-color-8 { color: var(--color-8); }
+.border-color-8 { border-color: var(--color-8); }
+.bg-color-9 { background-color: var(--color-9); }
+.text-color-9 { color: var(--color-9); }
+.border-color-9 { border-color: var(--color-9); }
+.bg-color-10 { background-color: var(--color-10); }
+.text-color-10 { color: var(--color-10); }
+.border-color-10 { border-color: var(--color-10); }
+
+/* === Typography Utility Classes === */
+.font-primary { font-family: var(--font-primary), var(--font-stack); }
+.font-secondary { font-family: var(--font-secondary), var(--font-stack); }
+.font-mono { font-family: var(--font-mono), monospace; }
+
+/* === Layout Utility Classes === */
+.bg-body { background: var(--body-background); }
+.text-heading { color: var(--heading-color); }
+.text-link { color: var(--link-color); }
+
+/* === Component Base Styles === */
+body {
+    background: var(--body-background);
+    font-family: var(--font-stack);
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    font-family: var(--font-primary), var(--font-stack);
+}
+
+a {
+    color: var(--link-color);
+}
+
+code, pre {
+    font-family: var(--font-mono), monospace;
+}
+
+/* === Color Palette Classes === */
+.palette-1 { --current-color: var(--color-1); }
+.palette-2 { --current-color: var(--color-2); }
+.palette-3 { --current-color: var(--color-3); }
+.palette-4 { --current-color: var(--color-4); }
+.palette-5 { --current-color: var(--color-5); }
+
+/* Use with: background: var(--current-color); or color: var(--current-color); */
+
+/* === Responsive Font Sizes === */
+:root {
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+}
+
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-3xl { font-size: var(--font-size-3xl); }
+.text-4xl { font-size: var(--font-size-4xl); }
+
+/* === Usage Examples ===
+
+Example 1: Basic usage
+<div class="bg-color-1 text-color-2 font-primary">
+    Content with extracted colors and fonts
+</div>
+
+Example 2: Component styling
+.my-button {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    font-family: var(--font-primary);
+}
+
+Example 3: Theme-aware components
+.card {
+    background: var(--body-background);
+    color: var(--text-color);
+    border: 1px solid var(--color-accent);
+}
+
+*/

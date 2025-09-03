@@ -1,0 +1,59 @@
+== Style Guide for Unknown URL ==
+
+=== Basic Information ===
+'''Body Background:''' Not detected
+'''Body Font:''' Not detected
+
+=== Color Palette ===
+{| class="wikitable"
+|-
+! Color !! Value !! Usage
+|-
+| style='background-color: #fdfdff' | 
+| <code>#fdfdff</code>
+| Color 1
+|-
+| style='background-color: #f0f0f2' | 
+| <code>#f0f0f2</code>
+| Color 2
+|-
+| style='background-color: #38488f' | 
+| <code>#38488f</code>
+| Color 3
+|}
+
+=== Typography ===
+{| class="wikitable"
+|-
+! Font Family !! Type
+|-
+| -apple-system
+| Sans-serif
+|-
+| BlinkMacSystemFont
+| Sans-serif
+|-
+| Helvetica
+| Sans-serif
+|-
+| Arial
+| Sans-serif
+|-
+| sans-serif
+| Serif
+|-
+| system-ui
+| Sans-serif
+|-
+| Helvetica Neue
+| Sans-serif
+|-
+| Open Sans
+| Sans-serif
+|}
+
+=== How to Use ===
+# Copy the color values from the table above
+# Use the font families in your CSS or theme settings
+# Apply the body background color to match the original site
+# Test the color combinations for accessibility

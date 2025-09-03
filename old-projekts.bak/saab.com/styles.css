@@ -1,0 +1,264 @@
+/* 
+   Modern CSS Variables and Utilities (2025)
+   Generated from: https://saab.com
+   Date: 2025-09-03 09:55:29
+   Web Style Extractor v2.0 - Modern CSS Edition
+*/
+
+:root {
+    /* === Traditional Color Palette === */
+    --color-1: #ffff00;  /* Color 1 */
+    --color-2: #000000;  /* Color 2 */
+    --color-3: #444444;  /* Color 3 */
+    --color-4: #999999;  /* Color 4 */
+    --color-5: #e6e6e6;  /* Color 5 */
+    --color-6: #0078e7;  /* Color 6 */
+    --color-7: #ffffff;  /* Color 7 */
+    --color-8: #cccccc;  /* Color 8 */
+    --color-9: #dddddd;  /* Color 9 */
+    --color-10: #129fea;  /* Color 10 */
+    
+    /* === Modern OKLCH Colors === */
+    --color-1-oklch: oklch(50.0% 0.370 60.0deg);  /* Modern equivalent */
+    --color-2-oklch: oklch(0.0% 0.000 0.0deg);  /* Modern equivalent */
+    --color-3-oklch: oklch(26.7% 0.000 0.0deg);  /* Modern equivalent */
+    --color-4-oklch: oklch(60.0% 0.000 0.0deg);  /* Modern equivalent */
+    --color-5-oklch: oklch(90.2% 0.000 0.0deg);  /* Modern equivalent */
+    --color-6-oklch: oklch(45.3% 0.370 208.8deg);  /* Modern equivalent */
+    --color-7-oklch: oklch(100.0% 0.000 0.0deg);  /* Modern equivalent */
+    --color-8-oklch: oklch(80.0% 0.000 0.0deg);  /* Modern equivalent */
+    --color-9-oklch: oklch(86.7% 0.000 0.0deg);  /* Modern equivalent */
+    --color-10-oklch: oklch(49.4% 0.317 200.8deg);  /* Modern equivalent */
+    
+    /* === Named Color System === */
+    --color-primary: #ffff00;
+    --color-primary-oklch: oklch(50.0% 0.370 60.0deg);
+    --color-secondary: #000000;
+    --color-secondary-oklch: oklch(0.0% 0.000 0.0deg);
+    
+    /* === Dynamic Color Variations (CSS 2025) === */
+    --color-primary-light: oklch(from var(--color-primary-oklch) calc(l + 0.2) c h);
+    --color-primary-dark: oklch(from var(--color-primary-oklch) calc(l - 0.2) c h);
+    --color-secondary-light: oklch(from var(--color-secondary-oklch) calc(l + 0.2) c h);
+    --color-secondary-dark: oklch(from var(--color-secondary-oklch) calc(l - 0.2) c h);
+    
+    /* === Design Token System === */
+    --space-3xs: 0.25rem;  /* 4px */
+    --space-2xs: 0.5rem;   /* 8px */ 
+    --space-xs: 0.75rem;   /* 12px */
+    --space-sm: 1rem;      /* 16px */
+    --space-md: 1.5rem;    /* 24px */
+    --space-lg: 2rem;      /* 32px */
+    --space-xl: 3rem;      /* 48px */
+    --space-2xl: 4rem;     /* 64px */
+    
+    /* === Typography Scale === */
+    --font-primary: monospace;
+    --font-secondary: FreeSans;
+    --font-mono: monospace;
+    --font-stack: AktivGroteskRegular, Arial, sans-serif;
+    
+    /* === Fluid Typography System === */
+    --font-size-fluid-xs: clamp(0.75rem, 1.5vw, 0.875rem);
+    --font-size-fluid-sm: clamp(0.875rem, 2vw, 1rem);
+    --font-size-fluid-base: clamp(1rem, 2.5vw, 1.125rem);
+    --font-size-fluid-lg: clamp(1.125rem, 3vw, 1.375rem);
+    --font-size-fluid-xl: clamp(1.375rem, 4vw, 1.875rem);
+    --font-size-fluid-2xl: clamp(1.875rem, 5vw, 2.5rem);
+    
+    /* === Extracted Styles === */
+    --body-background: rgb(243, 243, 242);
+    --heading-color: rgb(255, 255, 255);
+    --link-color: rgb(255, 255, 255);
+    --text-color: rgb(255, 255, 255);
+    
+    /* === Shadow System === */
+    --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* === Existing CSS Custom Properties (Extracted) === */
+:root {
+    --contact: first-of-type:not(:only-of-type){padding-bottom:60px;
+    --is-in-view: after,.learnmore.learnmore--is-in-view:before{transform:translateX(0);
+    --mobile: after{content:"";
+    --navigation: before{position:absolute;
+    --open: after{transform:rotate(180deg);
+    --swiper-navigation-color: #000000;
+    --swiper-navigation-size: 44px;
+    --swiper-pagination-color: #000000;
+    --swiper-preloader-color: #000;
+    --swiper-theme-color: #007aff;
+    --time: before{content:"";
+    --wrapper: after{display:none;
+}
+
+/* === Modern Color Utility Classes === */
+.bg-color-1 { background: var(--color-1); }
+.bg-color-1-oklch { background: var(--color-1-oklch); }
+.text-color-1 { color: var(--color-1); }
+.text-color-1-oklch { color: var(--color-1-oklch); }
+.bg-color-2 { background: var(--color-2); }
+.bg-color-2-oklch { background: var(--color-2-oklch); }
+.text-color-2 { color: var(--color-2); }
+.text-color-2-oklch { color: var(--color-2-oklch); }
+.bg-color-3 { background: var(--color-3); }
+.bg-color-3-oklch { background: var(--color-3-oklch); }
+.text-color-3 { color: var(--color-3); }
+.text-color-3-oklch { color: var(--color-3-oklch); }
+.bg-color-4 { background: var(--color-4); }
+.bg-color-4-oklch { background: var(--color-4-oklch); }
+.text-color-4 { color: var(--color-4); }
+.text-color-4-oklch { color: var(--color-4-oklch); }
+.bg-color-5 { background: var(--color-5); }
+.bg-color-5-oklch { background: var(--color-5-oklch); }
+.text-color-5 { color: var(--color-5); }
+.text-color-5-oklch { color: var(--color-5-oklch); }
+.bg-color-6 { background: var(--color-6); }
+.bg-color-6-oklch { background: var(--color-6-oklch); }
+.text-color-6 { color: var(--color-6); }
+.text-color-6-oklch { color: var(--color-6-oklch); }
+.bg-color-7 { background: var(--color-7); }
+.bg-color-7-oklch { background: var(--color-7-oklch); }
+.text-color-7 { color: var(--color-7); }
+.text-color-7-oklch { color: var(--color-7-oklch); }
+.bg-color-8 { background: var(--color-8); }
+.bg-color-8-oklch { background: var(--color-8-oklch); }
+.text-color-8 { color: var(--color-8); }
+.text-color-8-oklch { color: var(--color-8-oklch); }
+.bg-color-9 { background: var(--color-9); }
+.bg-color-9-oklch { background: var(--color-9-oklch); }
+.text-color-9 { color: var(--color-9); }
+.text-color-9-oklch { color: var(--color-9-oklch); }
+.bg-color-10 { background: var(--color-10); }
+.bg-color-10-oklch { background: var(--color-10-oklch); }
+.text-color-10 { color: var(--color-10); }
+.text-color-10-oklch { color: var(--color-10-oklch); }
+
+/* === Typography Utilities === */
+.font-primary { font-family: var(--font-primary), var(--font-stack); }
+.font-secondary { font-family: var(--font-secondary), var(--font-stack); }
+.font-mono { font-family: var(--font-mono), monospace; }
+
+/* === Fluid Typography Classes === */
+.text-fluid-xs { font-size: var(--font-size-fluid-xs); }
+.text-fluid-sm { font-size: var(--font-size-fluid-sm); }
+.text-fluid-base { font-size: var(--font-size-fluid-base); }
+.text-fluid-lg { font-size: var(--font-size-fluid-lg); }
+.text-fluid-xl { font-size: var(--font-size-fluid-xl); }
+.text-fluid-2xl { font-size: var(--font-size-fluid-2xl); }
+
+/* === Spacing Utilities === */
+.space-3xs { margin: var(--space-3xs); }
+.space-2xs { margin: var(--space-2xs); }
+.space-xs { margin: var(--space-xs); }
+.space-sm { margin: var(--space-sm); }
+.space-md { margin: var(--space-md); }
+.space-lg { margin: var(--space-lg); }
+
+/* === Modern Component Base Styles === */
+body {
+    background: var(--body-background);
+    font-family: var(--font-stack);
+    color: var(--text-color);
+    font-size: var(--font-size-fluid-base);
+}
+
+h1 { 
+    color: var(--heading-color);
+    font-family: var(--font-primary), var(--font-stack);
+    font-size: var(--font-size-fluid-2xl);
+}
+
+h2 { 
+    color: var(--heading-color);
+    font-size: var(--font-size-fluid-xl);
+}
+
+h3 { 
+    color: var(--heading-color);
+    font-size: var(--font-size-fluid-lg);
+}
+
+a {
+    color: var(--link-color);
+    transition: color 0.2s ease;
+    
+    &:hover {
+        color: var(--color-primary-light);
+    }
+}
+
+/* === Modern Button Component === */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: 0.375rem;
+    font-weight: 500;
+    font-size: var(--font-size-fluid-sm);
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-md);
+    }
+    
+    &:focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+    }
+}
+
+.btn--primary {
+    background: var(--color-primary);
+    color: white;
+    
+    &:hover {
+        background: var(--color-primary-dark);
+    }
+}
+
+.btn--secondary {
+    background: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    
+    &:hover {
+        background: var(--color-primary);
+        color: white;
+    }
+}
+
+/* === Usage Examples ===
+
+Example 1: Modern color usage
+.my-component {
+    background: var(--color-primary-oklch);
+    color: var(--color-primary-light);
+}
+
+Example 2: Fluid typography
+.heading {
+    font-size: var(--font-size-fluid-xl);
+    line-height: 1.2;
+}
+
+Example 3: Design token spacing
+.card {
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+    border-radius: var(--space-xs);
+}
+
+Example 4: Modern button with container queries
+<div class="container-aware">
+    <button class="btn btn--primary">Click me</button>
+</div>
+
+*/

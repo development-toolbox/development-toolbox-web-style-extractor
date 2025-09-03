@@ -1,0 +1,42 @@
+# Global settings for Web Style Extractor
+
+# Application settings
+app:
+  name: "Web Style Extractor"
+  version: "2.0.0"
+  description: "Extract colors, fonts, and design systems from websites"
+
+# Output settings
+output:
+  default_format: "json"
+  create_project_directory: true
+  include_metadata: true
+  include_readme: true
+  
+# Web scraping settings  
+scraping:
+  timeout: 10  # seconds
+  max_redirects: 5
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+  
+# WebDriver settings
+webdriver:
+  enabled: true
+  headless: true
+  timeout: 30  # seconds
+  window_size: "1920,1080"
+  
+# Logging settings
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+# Performance settings
+performance:
+  max_concurrent_requests: 5
+  cache_enabled: false
+  
+# Security settings
+security:
+  verify_ssl: true
+  max_file_size: 10485760  # 10MB in bytes

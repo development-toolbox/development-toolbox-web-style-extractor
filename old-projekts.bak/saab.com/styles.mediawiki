@@ -1,0 +1,58 @@
+== Style Guide for https://saab.com ==
+
+'''Body Background:''' rgb(243, 243, 242)
+'''Body Font:''' AktivGroteskRegular, Arial, sans-serif
+'''Heading Color:''' rgb(255, 255, 255)
+'''Link Color:''' rgb(255, 255, 255)
+
+=== Color Palette ===
+{| class="wikitable"
+|-
+! Color !! Value
+|-
+| style='background-color: #ffff00' | {{#tag:colorbox|#ffff00}}
+| <code>#ffff00</code>
+|-
+| style='background-color: #000000' | {{#tag:colorbox|#000000}}
+| <code>#000000</code>
+|-
+| style='background-color: #444444' | {{#tag:colorbox|#444444}}
+| <code>#444444</code>
+|-
+| style='background-color: #999999' | {{#tag:colorbox|#999999}}
+| <code>#999999</code>
+|-
+| style='background-color: #e6e6e6' | {{#tag:colorbox|#e6e6e6}}
+| <code>#e6e6e6</code>
+|-
+| style='background-color: #0078e7' | {{#tag:colorbox|#0078e7}}
+| <code>#0078e7</code>
+|-
+| style='background-color: #ffffff' | {{#tag:colorbox|#ffffff}}
+| <code>#ffffff</code>
+|-
+| style='background-color: #cccccc' | {{#tag:colorbox|#cccccc}}
+| <code>#cccccc</code>
+|-
+| style='background-color: #dddddd' | {{#tag:colorbox|#dddddd}}
+| <code>#dddddd</code>
+|-
+| style='background-color: #129fea' | {{#tag:colorbox|#129fea}}
+| <code>#129fea</code>
+|}
+
+=== Fonts ===
+{| class="wikitable"
+|-
+! Font
+|-
+| <code>monospace</code>
+|-
+| <code>FreeSans</code>
+|-
+| <code>Arimo</code>
+|-
+| <code>Droid Sans</code>
+|-
+| <code>Helvetica</code>
+|}

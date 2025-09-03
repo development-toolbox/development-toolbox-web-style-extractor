@@ -70,20 +70,28 @@ pip install -r requirements.txt
 
 ## Quick Start
 
-Extract styles from any website:
+### Installation
+```bash
+# Setup virtual environment (recommended)
+python -m venv venv
+source venv/Scripts/activate  # Windows Git Bash
+pip install -r requirements.txt
+```
+
+### Extract styles from any website:
 
 ```bash
-# Basic extraction (MediaWiki format)
+# Basic extraction (JSON format - default)
 python style_extractor.py https://github.com
 
-# Generate JSON for API integration
-python style_extractor.py https://github.com --output json
+# Generate CSS variables
+python style_extractor.py https://github.com --output css
+
+# Create BookStack theme
+python style_extractor.py https://github.com --output bookstack
 
 # Create Tailwind CSS configuration
 python style_extractor.py https://github.com --output tailwind
-
-# Generate design tokens
-python style_extractor.py https://github.com --output design-tokens
 ```
 
 ### Project Structure

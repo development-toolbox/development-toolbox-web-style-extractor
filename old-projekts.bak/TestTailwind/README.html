@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎨 Style Guide for saab.com</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #34495e; margin-top: 30px; }
+        h3 { color: #7f8c8d; }
+        
+        .meta-info {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-card {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .stat-number { font-size: 24px; font-weight: bold; color: #2980b9; }
+        .stat-label { font-size: 14px; color: #7f8c8d; }
+        
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .color-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .color-swatch {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+        }
+        
+        .color-info {
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .color-hex {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .font-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .font-table th {
+            background: #34495e;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .font-table td {
+            padding: 12px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .font-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .font-example {
+            font-size: 16px;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            margin: 5px 0;
+            border: 1px solid #e9ecef;
+        }
+        
+        .usage-badge {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .usage-badge.monospace { background: #e74c3c; }
+        .usage-badge.system { background: #27ae60; }
+        .usage-badge.serif { background: #f39c12; }
+        .usage-badge.keyword { background: #9b59b6; }
+        .usage-badge.fallback { background: #95a5a6; }
+        
+        .files-list {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .files-list ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        
+        code {
+            background: #f8f9fa;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .highlight { background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%); padding: 2px 5px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>🎨 Style Guide for saab.com</h1>
+    
+    <div class="meta-info">
+        <strong>Extracted from:</strong> <a href="https://saab.com" target="_blank">https://saab.com</a><br>
+        <strong>Generated:</strong> 2025-09-02 22:55:38<br>
+        <strong>Format:</strong> TAILWIND
+    </div>
+    
+    <h2>📊 Quick Stats</h2>
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-number">10</div>
+            <div class="stat-label">Colors Found</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Fonts Found</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">3</div>
+            <div class="stat-label">Output Files</div>
+        </div>
+    </div>
+    
+    <h2>📁 Files in this Project</h2>
+    <div class="files-list">
+        <ul>
+            <li><strong><code>styles.tailwind</code></strong> - Main TAILWIND output file</li>
+            <li><strong><code>metadata.txt</code></strong> - Detailed extraction information</li>
+            <li><strong><code>README.md</code></strong> - Markdown documentation</li>
+            <li><strong><code>README.html</code></strong> - This HTML file with live font previews</li>
+        </ul>
+    </div>
+    
+    <h2>🎨 Color Palette</h2>
+    <div class="color-grid">
+        
+        <div class="color-card">
+            <div class="color-swatch" style="background-color: #ffff00;">
+                #ffff00
+            </div>
+            <div class="color-info">
+                <div class="color-hex">#ffff00</div>
+                <div>Color 1</div>
+            </div>
+        </div>
+
+        <div class="color-card">
+            <div class="color-swatch" style="background-color: #000000;">
+                #000000
+            </div>
+            <div class="color-info">
+                <div class="color-hex">#000000</div>
+                <div>Color 2</div>
+            </div>
+        </div>
+
+        <div class="color-card">
+            <div class="color-swatch" style="background-color: #444444;">
+                #444444
+            </div>
+            <div class="color-info">
+                <div class="color-hex">#444444</div>
+                <div>Color 3</div>
+            </div>
+        </div>
+
+        <div class="color-card">
+            <div class="color-swatch" style="background-color: #999999;">
+                #999999
+            </div>
+            <div class="color-info">
+                <div class="color-hex">#999999</div>
+                <div>Color 4</div>
+            </div>
+        </div>
+
+        <div class="color-card">
+            <div class="color-swatch" style="background-color: #e6e6e6;">
+                #e6e6e6
+            </div>
+            <div class="color-info">
+                <div class="color-hex">#e6e6e6</div>
+                <div>Color 5</div>
+            </div>
+        </div>
+
+        <div class="color-card">
+            <div class="color-swatch" style="background-color: #0078e7;">
+                #0078e7
+            </div>
+            <div class="color-info">
+                <div class="color-hex">#0078e7</div>
+                <div>Color 6</div>
+            </div>
+        </div>
+
+        <div class="color-card">
+            <div class="color-swatch" style="background-color: #ffffff;">
+                #ffffff
+            </div>
+            <div class="color-info">
+                <div class="color-hex">#ffffff</div>
+                <div>Color 7</div>
+            </div>
+        </div>
+
+        <div class="color-card">
+            <div class="color-swatch" style="background-color: #cccccc;">
+                #cccccc
+            </div>
+            <div class="color-info">
+                <div class="color-hex">#cccccc</div>
+                <div>Color 8</div>
+            </div>
+        </div>
+
+        <div class="color-card">
+            <div class="color-swatch" style="background-color: #dddddd;">
+                #dddddd
+            </div>
+            <div class="color-info">
+                <div class="color-hex">#dddddd</div>
+                <div>Color 9</div>
+            </div>
+        </div>
+
+        <div class="color-card">
+            <div class="color-swatch" style="background-color: #129fea;">
+                #129fea
+            </div>
+            <div class="color-info">
+                <div class="color-hex">#129fea</div>
+                <div>Color 10</div>
+            </div>
+        </div>
+    </div>
+    
+    <h2>🔤 Font Stack with Live Previews</h2>
+    <p>The table below shows each font <span class="highlight">actually rendered</span> so you can see exactly how they look:</p>
+    
+    <table class="font-table">
+        <thead>
+            <tr>
+                <th>Font Name</th>
+                <th>Live Example</th>
+                <th>Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td><code>monospace</code></td>
+                <td>
+                    <div class="font-example" style="font-family: monospace, monospace, sans-serif;">
+                        The quick brown fox jumps over the lazy dog<br>
+                        <small>ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789</small>
+                    </div>
+                </td>
+                <td>
+                    <span class="usage-badge monospace">Monospace/Code</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>FreeSans</code></td>
+                <td>
+                    <div class="font-example" style="font-family: FreeSans, monospace, sans-serif;">
+                        The quick brown fox jumps over the lazy dog<br>
+                        <small>ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789</small>
+                    </div>
+                </td>
+                <td>
+                    <span class="usage-badge serif">Sans-serif Fallback</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>Arimo</code></td>
+                <td>
+                    <div class="font-example" style="font-family: Arimo, monospace, sans-serif;">
+                        The quick brown fox jumps over the lazy dog<br>
+                        <small>ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789</small>
+                    </div>
+                </td>
+                <td>
+                    <span class="usage-badge custom">Display/Custom</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>Droid Sans</code></td>
+                <td>
+                    <div class="font-example" style="font-family: Droid Sans, monospace, sans-serif;">
+                        The quick brown fox jumps over the lazy dog<br>
+                        <small>ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789</small>
+                    </div>
+                </td>
+                <td>
+                    <span class="usage-badge serif">Sans-serif Fallback</span>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>Helvetica</code></td>
+                <td>
+                    <div class="font-example" style="font-family: Helvetica, monospace, sans-serif;">
+                        The quick brown fox jumps over the lazy dog<br>
+                        <small>ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789</small>
+                    </div>
+                </td>
+                <td>
+                    <span class="usage-badge custom">Display/Custom</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2>🎯 Key Extracted Styles</h2>
+    <div class="meta-info">
+        <strong>Body Background:</strong> <code>rgb(243, 243, 242)</code><br>
+        <strong>Body Font:</strong> <code>AktivGroteskRegular, Arial, sans-serif</code><br>
+        <strong>Heading Color:</strong> <code>rgb(255, 255, 255)</code><br>
+        <strong>Link Color:</strong> <code>rgb(255, 255, 255)</code>
+    </div>
+    
+    <h2>🚀 How to Use This Information</h2>
+    
+    <h3>📝 For MediaWiki Documentation</h3>
+    <p>Open <code>styles.mediawiki</code> and copy the content directly into your MediaWiki page. The color tables and font lists are ready to use!</p>
+    
+    <h3>💾 For Development</h3>
+    <p>Use <code>styles.json</code> for programmatic access to all extracted data. Perfect for generating CSS variables or design tokens.</p>
+    
+    <h3>👀 For Design Review</h3>
+    <p>Use this HTML file to visually review the website's typography and color choices with your team.</p>
+    
+    <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; color: #7f8c8d;">
+        <p>Generated by <a href="https://github.com/your-repo/style-extractor" target="_blank">Web Style Extractor</a> v1.0</p>
+    </footer>
+</body>
+</html>

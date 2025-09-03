@@ -1,9 +1,13 @@
 # Core dependencies for Web Style Extractor
 requests>=2.31.0
 beautifulsoup4>=4.12.2
-cssutils>=2.10.1
+tinycss2>=1.3.0
 selenium>=4.15.0
 webdriver-manager>=4.0.1
 pillow>=10.0.0
+
+# Plugin system dependencies
+jinja2>=3.1.2
+pyyaml>=6.0
 
 # Note: colorsys is part of Python standard library

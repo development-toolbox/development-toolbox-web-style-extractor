@@ -1,0 +1,36 @@
+{
+  "url": "https://saab.com",
+  "extraction_date": "2025-09-03T09:54:57.993271Z",
+  "styles": {
+    "body_background": "rgb(243, 243, 242)",
+    "body_font": "AktivGroteskRegular, Arial, sans-serif",
+    "heading_color": "rgb(255, 255, 255)",
+    "link_color": "rgb(255, 255, 255)"
+  },
+  "colors": [
+    "#ffff00",
+    "#000000",
+    "#444444",
+    "#999999",
+    "#e6e6e6",
+    "#0078e7",
+    "#ffffff",
+    "#cccccc",
+    "#dddddd",
+    "#129fea"
+  ],
+  "fonts": [
+    "monospace",
+    "FreeSans",
+    "Arimo",
+    "Droid Sans",
+    "Helvetica"
+  ],
+  "metadata": {
+    "extractor_version": "1.0",
+    "total_colors_found": 10,
+    "total_fonts_found": 5,
+    "extraction_method": "css_analysis_and_computed_styles",
+    "browser_used": "Chrome (headless)"
+  }
+}

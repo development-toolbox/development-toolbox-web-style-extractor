@@ -1,0 +1,57 @@
+== Style Guide for Unknown URL ==
+
+=== Basic Information ===
+'''Body Background:''' Not detected
+'''Body Font:''' Not detected
+
+=== Color Palette ===
+{| class="wikitable"
+|-
+! Color !! Value !! Usage
+|-
+| style='background-color: #ffffffcc' | 
+| <code>#ffffffcc</code>
+| Color 1
+|-
+| style='background-color: #ffffffb3' | 
+| <code>#ffffffb3</code>
+| Color 2
+|-
+| style='background-color: #ffffff66' | 
+| <code>#ffffff66</code>
+| Color 3
+|-
+| style='background-color: #ffffff33' | 
+| <code>#ffffff33</code>
+| Color 4
+|-
+| style='background-color: #ffffff26' | 
+| <code>#ffffff26</code>
+| Color 5
+|-
+| style='background-color: #ffffff1a' | 
+| <code>#ffffff1a</code>
+| Color 6
+|-
+| style='background-color: #ffffff00' | 
+| <code>#ffffff00</code>
+| Color 7
+|-
+| style='background-color: #fff8c5' | 
+| <code>#fff8c5</code>
+| Color 8
+|-
+| style='background-color: #fff2d5' | 
+| <code>#fff2d5</code>
+| Color 9
+|-
+| style='background-color: #fff1e5' | 
+| <code>#fff1e5</code>
+| Color 10
+|}
+
+=== How to Use ===
+# Copy the color values from the table above
+# Use the font families in your CSS or theme settings
+# Apply the body background color to match the original site
+# Test the color combinations for accessibility
